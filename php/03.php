@@ -78,7 +78,6 @@ newl();
  * Toán tử này thường gặp khi khai báo database.
  * Trong các phép toán logic thông thường nên sử dụng ||, &&
  * hoặc sử dụng các cặp dấu ngoặc đơn () cho khối điều kiện.
- *
  */
 $e = true;
 $f = false;

@@ -1,0 +1,136 @@
+                     W32TeX ファイルの簡易インストーラ
+
+texinst2013.exe は W32TeX 専用の簡易インストーラです。
+texinst2013.zip だけはあらかじめ TeX のインストールディレクトリ
+(例えば c:/w32tex ) で展開しておきます。
+
+ダウンロードした W32TeX のアーカイブ (foo.tar.xz のようなもの)
+を任意の一つのディレクトリ (例えば c:/temp) に入れておきます。
+
+アーカイブは，全部でも一部でも OK です。
+
+TeX のインストールディレクトリをカレントディレクトリとして
+
+   texinst2013 c:/temp
+
+とするだけでアーカイブの展開をします。プログラムの最後に，PATH
+を設定するよう表示します。
+
+texinst2013 の使用法は，上に述べたように
+
+   texinst2013 dir
+
+です。ここで， dir は ダウンロードした W32TeX のアーカイブ
+ファイルが入っているディレクトリ (フォルダ) の絶対パスによる名前です。
+但し、dir はスペースを含まない名前とします。
+
+   texinst2013
+
+とすると，簡単な使用法を表示します。
+---------------------------------------------------------------------------
+
+                                付録
+
+                             gzip for Win32
+
+GNU gzip-1.4 を Microsoft VC++ で Make したものです。
+Windows XP/Vista/7/8/8.1 用の Win32 console application です。
+gzip.pdf はマニュアルです。
+
+余分のコピーにより
+gzcat.exe, gunzip.exe などをつくれば
+gunzip foo.gz
+gzcat foo.gz > foo
+などの使用ができます。
+gzip --help により使用法が表示されます。
+
+
+
+                              bzip2 for Win32
+
+Julian R Seward さんによる、bzip2-1.0.6 を Microsoft VC++ で Make
+したものです。
+Windows XP/Vista/7/8/8.1 用の Win32 console application です。
+bzip2.pdf はマニュアルです。
+
+余分のコピーにより
+bzcat.exe, bunzip2.exe などをつくれば
+bunzip2 foo.bz2
+bzcat foo.bz2 > foo
+などの使用ができます。
+bzip2 --help により使用法が表示されます。
+
+
+                              lzma for Win32
+
+Igor Pavlov さんによる LZMA SDK 4.32 に基づいて、Ville Koskinen さんが
+Unix 用に作成した lzma 4.32.6 を Windows 用に移植したものです。
+lzma.pdf はマニュアルです。
+
+余分のコピーにより
+lzcat.exe, unlzma.exe をつくれば
+unlzma foo.lzma
+lzcat foo.lzma > foo
+などの使用ができます。
+lzma --help により使用法が表示されます。
+
+                              xz for Win32
+
+Lasse Collin さんによるxz を Windows 用にビルドしたものです。
+これは MSVC++ ではなくて、MinGW でビルドしました。
+xz --help により使用法が表示されます。
+
+
+
+                          GNU tar 1.11.8 + 2.2(WIN32)
+
+三浦 重喜 (Shigeki Miura) さんによる、GNU tar 1.11.8 + 1.5(WIN32) に
+trivial な付加機能を付けたものです。Microsoft VC++ で Make して
+あります。tar.pdf はマニュアルです。付加機能は
+
+(1) 異なるドライブに対する -C オプションが使用不可だったのを
+    使用可能にした。
+    tar zxvf foo.tar.gz -C d:/bar/baz
+    などとできるようになった。
+(2) 圧縮フィルタとして、gzip に加えて bzip2 を使えるようにした。
+    オプション文字は j を採用してある。長い形式では --bzip2 である。
+    従って例えば
+    tar jcf foo.tar.bz2 bar  とか
+    tar jxvf foo.tar.bz2 -C d:/bar/baz
+    などとできる。
+
+(3) 圧縮フィルタとして、gzip, bzip2 に加えて lzma を使えるようにした。
+    オプション文字は Y を採用してある。長い形式では --lzma である。
+    従って例えば
+    tar Ycf foo.tar.lzma bar  とか
+    tar Yxvf foo.tar.lzma -C d:/bar/baz
+    などとできる。
+
+(4) 圧縮フィルタとして、gzip, bzip2, lzma に加えて xz を使えるようにした。
+    オプション文字は J を採用してある。長い形式では --xz である。
+    従って例えば
+    tar Jcf foo.tar.xz bar  とか
+    tar Jxvf foo.tar.xz -C d:/bar/baz
+    などとできる。
+
+(5) 1.5 では long name に関して、oldgnu 形式しか使用できなかったが、
+    2.1 では posix header を使う ustar 形式のファイルも読むことができる。
+    ただし作成に関しては、oldgnu 形式のものを作成する。
+
+(6) 2.1 では、圧縮フィルタをアーカイブ拡張子で決めることができる。
+    つまり、デフォルト拡張子 ".gz", ".tgz", ".Z", ".bz2", ".lzma", ".xz"
+    を使えば、オプション文字 z, j, Y, J を省略できる。
+    圧縮フィルタの決定は最初のものが使用され、後で指定したものは無視される。
+    従って
+    tar xvf a.tar.xz --gzip
+    は矛盾しているけれども、エラーにはならず、xz が使用される。一方
+    tar zxvf a.tar.xz
+    最初に gzip に決定されるので、矛盾していてエラーになる。
+
+(7) 2.2 では Pax extended header を部分的 ('x' タイプのみ) にサポート
+    している。この種のアーカイブを読み取ることができる。ただし作成に
+    関しては，oldgnu 形式のものを作成する。
+
+となっています。
+-----------------------
+Akira Kakuto

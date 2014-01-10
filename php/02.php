@@ -12,6 +12,9 @@ $a = 10;
 $b = 12;
 echo "Tổng của hai số $a và $b là: " . ($a + $b);
 $name = "John Smith";
+/*
+ * Block comment
+ */
 print '<br />' . $name;
 </script>
 

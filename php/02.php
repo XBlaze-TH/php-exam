@@ -13,7 +13,7 @@ $b = 12;
 echo "Tổng của hai số $a và $b là: " . ($a + $b);
 $name = "John Smith";
 /*
- * Block comment
+ * Block comment, this comment is added after the first time commit.
  */
 print '<br />' . $name;
 </script>

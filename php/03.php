@@ -7,11 +7,11 @@
  * Description: Các toán tử cơ bản
  */
 header('Content-Type: text/html; charset=UTF-8');
-echo("<title>Hello world</title>");
-/*$title = "Lesson 03";
+//echo("<title>Hello world</title>");
+$title = "Lesson 03";
 echo '<script type="text/javascript">' . "\n";
 echo 'document.title = "' . $title . '";' . "\n";
-echo '</script>' . "\n";*/
+echo '</script>' . "\n";
 
 $name = "Trần Hoàng Hải";
 $birthYear = 1989;
@@ -91,3 +91,50 @@ $check7 = ($e xor $e);
 
 printc($check7);
 
+
+//====================CÁC LOẠI VÒNG LẶP TRONG PHP==================//
+
+/*
+ * Vòng lặp while - do:
+ * Be careful with conditional variable in PHP.
+ * There is no warning for u when coding. :(
+ *
+ */
+$i = 0;
+while ($i <= 15) {
+    if ($i == 0) {
+        echo 'While Do:';
+        newl();
+    }
+    echo $i;
+    newl();
+//    $i++;
+}
+
+$age = 8;
+
+switch ($age) {
+    case 1:
+        echo "Case $age";
+        newl();
+        break; //break để ngừng thực hiện các lệnh kế tiếp
+    case 2:
+        echo "Case $age";
+        newl();
+        break;
+    case 3:
+        echo "Case $age";
+        newl();
+        break;
+    default: //default khi tất cả các case đều không thỏa mãn
+        echo "Case $age";
+        newl();
+}
+
+if ($abc = 8) {
+    echo $abc;
+    newl();
+} else {
+    echo 'FALSE';
+    newl();
+}

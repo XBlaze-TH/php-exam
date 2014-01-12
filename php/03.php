@@ -46,7 +46,6 @@ function printc($check)
 }
 
 
-
 /*
  * Các toán tử cơ bản trong PHP:
  */
@@ -108,7 +107,7 @@ while ($i <= 15) {
     }
     echo $i;
     newl();
-//    $i++;
+    $i++;
 }
 
 $age = 8;
